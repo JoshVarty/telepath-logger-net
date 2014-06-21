@@ -88,7 +88,7 @@ namespace telepath_logger_net
                 Directory.CreateDirectory(directoryPath);
             }
 
-            var fileName = DateTime.UtcNow.ToString("yyyyMMddssmm") + ".jpg";
+            var fileName = DateTime.UtcNow.ToString("yyyyMMddHHmmss") + ".jpg";
             var fullPath = Path.Combine(directoryPath, fileName);
 
             screenShot.Save(fullPath);
