@@ -1,4 +1,6 @@
 ﻿
+using System.Drawing;
+
 namespace telepath_logger_net
 {
     public class WebcamTracker
@@ -30,6 +32,7 @@ namespace telepath_logger_net
             _timer.Enabled = false;
             //Do work
             System.Diagnostics.Debug.WriteLine("WebcamTracker timer elapsed");
+
 
             //Work is complete, enable timer
             _timer.Enabled = true;
