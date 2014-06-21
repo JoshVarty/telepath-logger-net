@@ -5,6 +5,7 @@ using System.Timers;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.IO;
 
 namespace telepath_logger_net
 {
@@ -15,14 +16,13 @@ namespace telepath_logger_net
     /// </summary>
     public class ScreenTracker
     {
-
         private int _intervalInMs;
-        private static Timer _timer;
+        private static System.Timers.Timer _timer;
 
         public ScreenTracker(int intervalInMs = 1000)
         {
             _intervalInMs = intervalInMs;
-            _timer = new Timer(_intervalInMs);
+            _timer = new System.Timers.Timer(_intervalInMs);
         }
 
         public void Run()
@@ -45,6 +45,7 @@ namespace telepath_logger_net
             //Do work
             System.Diagnostics.Debug.WriteLine("Timer elapsed");
             var screenshot = takeScreenShot();
+            saveScreenShot(screenshot);
 
             //Work is complete, enable timer
             _timer.Enabled = true;
@@ -71,8 +72,26 @@ namespace telepath_logger_net
                 , Screen.PrimaryScreen.Bounds.Size
                 , CopyPixelOperation.SourceCopy);
 
-
             return bmpScreenshot;
         }
+
+        private void saveScreenShot(Bitmap screenShot)
+        {
+            //This is where we're running the application
+            string assemblyLocation = Utilities.AssemblyDirectory;
+            const string CAPTURE_DIR = "screenshots";
+            var date = DateTime.UtcNow.ToString("yyyyMMdd");
+
+            var directoryPath = Path.Combine(assemblyLocation, CAPTURE_DIR, date);
+            if (!Directory.Exists(directoryPath))
+            {
+                Directory.CreateDirectory(directoryPath);
+            }
+
+            var fileName = DateTime.UtcNow.ToString("yyyyMMddssmm") + ".jpg";
+            var fullPath = Path.Combine(directoryPath, fileName);
+
+            screenShot.Save(fullPath);
+       } 
     }
 }
