@@ -43,7 +43,7 @@ namespace telepath_logger_net
             _timer.Enabled = false;
 
             //Do work
-            System.Diagnostics.Debug.WriteLine("Timer elapsed");
+            System.Diagnostics.Debug.WriteLine("ScreenTracker timer elapsed");
             var screenshot = takeScreenShot();
             saveScreenShot(screenshot);
 
