@@ -51,7 +51,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenTracker.cs" />
     <Compile Include="Utilities.cs" />
-    <Compile Include="WebcamTracker.cs" />
+    <Compile Include="WebCam.cs" />
+    <Compile Include="WebCamTracker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
