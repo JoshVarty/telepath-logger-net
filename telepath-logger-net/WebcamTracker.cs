@@ -1,14 +1,15 @@
 ﻿
 using System.Drawing;
+using WebCam_Capture;
 
 namespace telepath_logger_net
 {
-    public class WebcamTracker
+    public class WebCamTracker
     {
         private int _intervalInMs;
         private System.Timers.Timer _timer;
 
-        public WebcamTracker(int intervalInMs = 60000)
+        public WebCamTracker(int intervalInMs = 60000)
         {
             _intervalInMs = intervalInMs;
             _timer = new System.Timers.Timer();
@@ -30,9 +31,9 @@ namespace telepath_logger_net
         {
             //Disable timer to avoid overlapping ticks
             _timer.Enabled = false;
+
             //Do work
             System.Diagnostics.Debug.WriteLine("WebcamTracker timer elapsed");
-
 
             //Work is complete, enable timer
             _timer.Enabled = true;
