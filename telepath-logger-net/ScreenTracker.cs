@@ -27,8 +27,8 @@ namespace telepath_logger_net
 
         public void Run()
         {
-            _timer.Enabled = true;
             _timer.Elapsed += _timer_Elapsed;
+            _timer.Enabled = true;
         }
 
         public void Stop()
