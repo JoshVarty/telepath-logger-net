@@ -19,7 +19,7 @@ namespace telepath_logger_net
         private int _intervalInMs;
         private static System.Timers.Timer _timer;
 
-        public ScreenTracker(int intervalInMs = 1000)
+        public ScreenTracker(int intervalInMs = 60000)
         {
             _intervalInMs = intervalInMs;
             _timer = new System.Timers.Timer(_intervalInMs);
