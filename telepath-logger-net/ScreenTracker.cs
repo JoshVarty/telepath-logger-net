@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Timers;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 namespace telepath_logger_net
 {
@@ -41,9 +44,35 @@ namespace telepath_logger_net
 
             //Do work
             System.Diagnostics.Debug.WriteLine("Timer elapsed");
+            var screenshot = takeScreenShot();
 
             //Work is complete, enable timer
             _timer.Enabled = true;
+        }
+
+
+        /// <summary>
+        /// Takes a screenshot of the user's desktop.
+        /// </summary>
+        private Bitmap takeScreenShot()
+        {
+            //Create a bitmap in which we can save the screen.
+            var bmpScreenshot = new Bitmap(Screen.PrimaryScreen.Bounds.Width,
+                                           Screen.PrimaryScreen.Bounds.Height,
+                                           PixelFormat.Format32bppArgb);
+
+            var gfx = Graphics.FromImage(bmpScreenshot);
+
+            //Take the screenshot
+            gfx.CopyFromScreen(Screen.PrimaryScreen.Bounds.X
+                , Screen.PrimaryScreen.Bounds.Y
+                , 0
+                , 0
+                , Screen.PrimaryScreen.Bounds.Size
+                , CopyPixelOperation.SourceCopy);
+
+
+            return bmpScreenshot;
         }
     }
 }
