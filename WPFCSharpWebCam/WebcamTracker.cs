@@ -21,7 +21,7 @@ namespace telepath_logger_net
             _parent = parent;
             _imgVideo = imgVideo;
             webcam = new WebCam();
-            webcam.InitializeWebCam(ref _imgCapturedFrame);
+            webcam.InitializeWebCam(ref _imgVideo);
             _intervalInMs = intervalInMs;
             _timer = new System.Timers.Timer(intervalInMs);
         }
@@ -73,7 +73,10 @@ namespace telepath_logger_net
             _parent.Dispatcher.Invoke((Action)(() =>
             {
                 if (_imgCapturedFrame == null || _imgCapturedFrame.Source == null)
+                {
+                    System.Diagnostics.Debug.WriteLine("imgCapturedFrame or source was null");
                     return;
+                }
                 BitmapSource bitmap = (BitmapSource)(_imgCapturedFrame.Source);
                 JpegBitmapEncoder encoder = new JpegBitmapEncoder();
                 encoder.Frames.Add(BitmapFrame.Create(bitmap));
