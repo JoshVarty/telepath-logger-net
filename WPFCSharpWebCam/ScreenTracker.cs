@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Drawing.Imaging;
 using System.IO;
 
-namespace WPFCSharpWebCam
+namespace telepath_logger_net
 {
     /// <summary>
     /// Periodically takes a screenshot of the user's desktop.

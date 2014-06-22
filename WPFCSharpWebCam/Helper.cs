@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Windows.Media.Imaging;
 
 
-namespace WPFCSharpWebCam
+namespace telepath_logger_net
 {
     //Design by Pongsakorn Poosankam
     class Helper

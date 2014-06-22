@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using WebCam_Capture;
 
-namespace WPFCSharpWebCam
+namespace telepath_logger_net
 {
     public class WebCamTracker
     {

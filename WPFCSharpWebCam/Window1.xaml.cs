@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WPFCSharpWebCam
+namespace telepath_logger_net
 {
     /// <summary>
     /// Design by Pongsakorn Poosankam

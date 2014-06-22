@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 
-namespace WPFCSharpWebCam
+namespace telepath_logger_net
 {
     /// <summary>
     /// Interaction logic for App.xaml

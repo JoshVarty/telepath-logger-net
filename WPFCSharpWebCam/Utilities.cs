@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace WPFCSharpWebCam
+namespace telepath_logger_net
 {
 
     public static class Utilities

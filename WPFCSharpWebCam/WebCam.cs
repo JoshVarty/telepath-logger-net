@@ -5,7 +5,7 @@ using System.Text;
 using WebCam_Capture;
 
 
-namespace WPFCSharpWebCam
+namespace telepath_logger_net
 {
     //Design by Pongsakorn Poosankam
     class WebCam

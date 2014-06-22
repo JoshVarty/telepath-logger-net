@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WPFCSharpWebCam.Properties {
+namespace telepath_logger_net.Properties {
     using System;
     
     
