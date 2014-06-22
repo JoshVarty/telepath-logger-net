@@ -3,9 +3,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using WebCam_Capture;
-using System.Windows.Controls;
-using System.Collections.Generic;
-using System.Windows.Media.Imaging;
 
 
 namespace WPFCSharpWebCam

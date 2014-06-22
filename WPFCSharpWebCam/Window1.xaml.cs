@@ -25,17 +25,15 @@ namespace WPFCSharpWebCam
             InitializeComponent();
         }
 
-        WebCam webcam;
+        WebCamTracker tracker;
         private void mainWindow_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-        	// TODO: Add event handler implementation here.
-            webcam = new WebCam();
-            webcam.InitializeWebCam(ref imgVideo);
+            tracker = new WebCamTracker(imgVideo);
         }
 
         private void bntStart_Click(object sender, RoutedEventArgs e)
         {
-            webcam.Start();
+            tracker.Run();
         }
     }
 }
