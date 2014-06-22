@@ -16,7 +16,7 @@ namespace telepath_logger_net
         Window1 _parent;
 
         WebCam webcam;
-        public WebCamTracker(Window1 parent, Image imgVideo, int intervalInMs = 1000)
+        public WebCamTracker(Window1 parent, Image imgVideo, int intervalInMs = 60000)
         {
             _parent = parent;
             _imgVideo = imgVideo;
