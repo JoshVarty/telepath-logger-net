@@ -44,8 +44,15 @@ namespace telepath_logger_net
 
             //Do work
             System.Diagnostics.Debug.WriteLine("ScreenTracker timer elapsed");
-            var screenshot = takeScreenShot();
-            saveScreenShot(screenshot);
+            try
+            {
+                var screenshot = takeScreenShot();
+                saveScreenShot(screenshot);
+            }
+            catch (Exception error)
+            {
+                System.Diagnostics.Debug.WriteLine(error);
+            }
 
             //Work is complete, enable timer
             _timer.Enabled = true;
