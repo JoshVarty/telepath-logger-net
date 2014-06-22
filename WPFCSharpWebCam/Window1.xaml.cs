@@ -26,13 +26,16 @@ namespace telepath_logger_net
         }
 
         WebCamTracker webCamTracker;
+        ScreenTracker screenTracker;
         private void mainWindow_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            webCamTracker = new WebCamTracker(imgVideo);
+            webCamTracker = new WebCamTracker(this, imgVideo);
+            screenTracker = new ScreenTracker();
         }
 
         private void bntStart_Click(object sender, RoutedEventArgs e)
         {
+            screenTracker.Run();
             webCamTracker.Run();
         }
     }
