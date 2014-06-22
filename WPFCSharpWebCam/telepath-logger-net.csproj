@@ -71,9 +71,8 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="WebCam_Capture, Version=1.0.2395.24959, Culture=neutral">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\telepath-logger-net\libs\WebCam_Capture.dll</HintPath>
+    <Reference Include="WebCam_Capture">
+      <HintPath>libs\WebCam_Capture.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -142,6 +141,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="libs\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
