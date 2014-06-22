@@ -25,15 +25,15 @@ namespace WPFCSharpWebCam
             InitializeComponent();
         }
 
-        WebCamTracker tracker;
+        WebCamTracker webCamTracker;
         private void mainWindow_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            tracker = new WebCamTracker(imgVideo);
+            webCamTracker = new WebCamTracker(imgVideo);
         }
 
         private void bntStart_Click(object sender, RoutedEventArgs e)
         {
-            tracker.Run();
+            webCamTracker.Run();
         }
     }
 }
