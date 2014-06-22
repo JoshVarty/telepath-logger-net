@@ -35,38 +35,7 @@ namespace WPFCSharpWebCam
 
         private void bntStart_Click(object sender, RoutedEventArgs e)
         {
-            
             webcam.Start();
-        }
-
-        private void bntStop_Click(object sender, RoutedEventArgs e)
-        {
-            webcam.Stop();
-        }
-
-        private void bntContinue_Click(object sender, RoutedEventArgs e)
-        {
-            webcam.Continue();
-        }
-
-        private void bntCapture_Click(object sender, RoutedEventArgs e)
-        {
-            imgCapture.Source = imgVideo.Source;
-        }
-
-        private void bntSaveImage_Click(object sender, RoutedEventArgs e)
-        {
-            Helper.SaveImageCapture((BitmapSource)imgCapture.Source);
-        }
-
-        private void bntResolution_Click(object sender, RoutedEventArgs e)
-        {
-            webcam.ResolutionSetting();
-        }
-
-        private void bntSetting_Click(object sender, RoutedEventArgs e)
-        {
-            webcam.AdvanceSetting();
         }
     }
 }
